@@ -28,7 +28,7 @@ function [time, dv, dt] = interPhaseTime(r1, r2, rin, k, di)
         vc = sqrt(mu ./ r2);
         ve = sqrt(mu .* (2 ./ r2 - 1 ./ a));
         %dv(ind - 1 + (ind == 3)*2) = sqrt(ve.^2 + vc.^2 - 2 * ve .* vc .* cos(di));
-        dv(4) = sqrt(ve.^2 + vc.^2 - 2 * ve .* vc .* cos(di));
+        dv(4) = sqrt(ve.^2 + vc.^2 - 2 * ve .* vc .* cosd(di));
 
         % output the total time
         time = sum(dt);
