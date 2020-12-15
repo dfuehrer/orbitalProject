@@ -37,7 +37,7 @@ function [dv, dt] = fiveBurn(buranOrbEl, SSOrbEl, time)
         vApoTrans = sqrt(mu .* (2 ./ raSS - 1 ./ a));
         % find the time for the SS to get from where it is at after this transfer to the apoapsis
         % find M of SS at apoapsis
-        MSSapoSS = nutoM(180, 0) * pi / 180;
+        MSSapoSS = nutoM(180, 0);
         % find M for SS when RM gets to apo of SS first
         [~, MSSapoRM, ~] = posaftertime(time + sum(dts(i, 1:2)));
         disp(time + sum(dts(i, 1:2)))
